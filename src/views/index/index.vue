@@ -2,11 +2,11 @@
   <el-container class="container">
     <el-header class="header" height="">
       <el-form :inline="true" class="search-bar-form">
-        <el-form-item label="Name">
-          <el-input v-model="Name" placeholder="Name" />
+        <el-form-item label="产品名称">
+          <el-input v-model="Name" placeholder="请输入产品名称" />
         </el-form-item>
-        <el-form-item label="SaleNo">
-          <el-input v-model="SaleNo" placeholder="SaleNo" />
+        <el-form-item label="合同号">
+          <el-input v-model="SaleNo" placeholder="请输入合同号" />
         </el-form-item>
         <el-form-item>
           <el-button type="success" @click="onClear">清空</el-button>
@@ -23,47 +23,47 @@
         fit
         highlight-current-row
       >
-        <el-table-column align="center" label="FSaleNo" width="95">
-          <template slot-scope="scope">
-            {{ scope.row.FSaleNo }}
-          </template>
-        </el-table-column>
-        <el-table-column label="FProduceTaskNo" width="200" align="center">
+        <el-table-column label="任务单号" width="200" align="center">
           <template slot-scope="scope">
             {{ scope.row.FProduceTaskNo }}
           </template>
         </el-table-column>
-        <el-table-column label="FCxReportNumber" width="110" align="center">
+        <el-table-column align="center" label="合同号" width="95">
           <template slot-scope="scope">
-            <span>{{ scope.row.FCxReportNumber }}</span>
+            {{ scope.row.FSaleNo }}
           </template>
         </el-table-column>
-        <el-table-column label="FName" align="center">
+        <el-table-column label="产品名称" align="center">
           <template slot-scope="scope">
             {{ scope.row.FName }}
           </template>
         </el-table-column>
-        <el-table-column label="FProduceNumber" width="110" align="center">
+        <el-table-column label="计划数" width="110" align="center">
           <template slot-scope="scope">
             {{ scope.row.FProduceNumber }}
           </template>
         </el-table-column>
-        <el-table-column label="FSyReportNumber" width="110" align="center">
+        <el-table-column label="成型数" width="110" align="center">
           <template slot-scope="scope">
-            {{ scope.row.FSyReportNumber }}
+            <span>{{ scope.row.FCxReportNumber }}</span>
           </template>
         </el-table-column>
-        <el-table-column label="FWCxReportNumber" width="110" align="center">
+        <el-table-column label="未成型数" width="110" align="center">
           <template slot-scope="scope">
             {{ scope.row.FWCxReportNumber }}
           </template>
         </el-table-column>
-        <el-table-column label="FWSyReportNumber" width="110" align="center">
+        <el-table-column label="上轴数" width="110" align="center">
+          <template slot-scope="scope">
+            {{ scope.row.FSyReportNumber }}
+          </template>
+        </el-table-column>
+        <el-table-column label="待上轴数" width="110" align="center">
           <template slot-scope="scope">
             {{ scope.row.FWSyReportNumber }}
           </template>
         </el-table-column>
-        <el-table-column label="FWSyReportNumber" width="110" align="center">
+        <el-table-column label="操作" width="110" align="center">
           <template slot-scope="scope">
             <div class="check-detail" @click="goDetail(scope.row)">查看</div>
           </template>
